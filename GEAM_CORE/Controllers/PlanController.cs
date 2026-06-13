@@ -21,13 +21,26 @@ namespace GEAM_CORE.Controllers
 
         //Get:BaseUrl/Plan/Index
 
-        public async  Task <IActionResult> Index()
+        public async Task<IActionResult> Index()
         {
-var plans = await context.Plans.ToListAsync<Plan>();
+            var plans = await context.Plans.ToListAsync<Plan>();
 
+
+            return View(plans);
+        }
+
+
+             public async Task<IActionResult> Details(int id)
+        {
+            var plans = await context.Plans.FindAsync( id);
+            if (plans == null )
+                return RedirectToAction(nameof(Index));
 
             return View(plans);
 
         }
+
+
     }
-}
+    }
+

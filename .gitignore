@@ -361,3 +361,4 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/GEAM_CORE/Views/Plan/Index.cshtml

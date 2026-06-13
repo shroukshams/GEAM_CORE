@@ -2,7 +2,7 @@
 
 namespace GEAM_CORE.Models
 {
-    internal class Plan : baseEntity
+    public class Plan : baseEntity
     {
         public int Id { get; set; }
         public string Name { get; set; }

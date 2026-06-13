@@ -1,3 +1,9 @@
+using GEAM_CORE.context;
+using GymMangment.BLL.Repositories.Classes;
+using GymMangment.BLL.Repositories.Interface;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+
 namespace GEAM_CORE
 {
     public class Program
@@ -8,8 +14,10 @@ namespace GEAM_CORE
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-
-            var app = builder.Build();
+            builder.Services.AddScoped <IPlanRepository, PlanRepository>();
+            builder.Services.AddDbContext<GymDbContexts>(Options => { Options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")); });
+       
+        var app = builder.Build();
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
@@ -31,6 +39,11 @@ namespace GEAM_CORE
                 .WithStaticAssets();
 
             app.Run();
+        }
+
+        private static int PlanRepository()
+        {
+            throw new NotImplementedException();
         }
     }
 }

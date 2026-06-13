@@ -15,8 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.15" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.15">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.17" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.17">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -24,6 +24,11 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GymMangement.DAL\GymMangement.DAL.csproj" />
+    <ProjectReference Include="..\GymMangment.BLL\GymMangment.BLL.csproj" />
   </ItemGroup>
 
 </Project>

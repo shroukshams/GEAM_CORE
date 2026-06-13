@@ -1,3 +1,5 @@
 <Solution>
-  <Project Path="GEAM_CORE/GEAM_CORE.csproj" />
+  <Project Path="GEAM_CORE/GEAM_CORE.PL.csproj" />
+  <Project Path="GymMangement.DAL/GymMangement.DAL.csproj" Id="326c00f2-d91c-4219-8338-2924a6558add" />
+  <Project Path="GymMangment.BLL/GymMangment.BLL.csproj" Id="5fb077df-3eb9-422f-8b31-6b64a6a5d6ab" />
 </Solution>

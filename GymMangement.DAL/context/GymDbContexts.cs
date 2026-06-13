@@ -18,6 +18,11 @@ namespace GEAM_CORE.context
             modelBuilder.ApplyConfiguration<Plan>(new plansConfiguration());
         }
 
+        internal async Task<int> SaveChangesAsync(CancellationToken ct)
+        {
+            throw new NotImplementedException();
+        }
+
         public DbSet<Models.Plan> Plans { get; set; }
         
 

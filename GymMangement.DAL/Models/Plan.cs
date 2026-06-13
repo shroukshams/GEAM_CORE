@@ -1,6 +1,8 @@
-﻿namespace GEAM_CORE.Models
+﻿using GymMangement.DAL.Models;
+
+namespace GEAM_CORE.Models
 {
-    public class Plan
+    internal class Plan : baseEntity
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -12,3 +14,4 @@
         public DateTime UpdatedAt { get; set; }
     }
 }
+            

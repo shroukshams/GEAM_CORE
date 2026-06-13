@@ -1,13 +1,12 @@
 ﻿using GEAM_CORE.context;
 using GEAM_CORE.Models;
-using GymMangment.BLL.Repositories.Interface;
-using GymMangment.BLL.Repositories.Interface;
+using GymMangment.DAL.Repositories.Interface;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace GymMangment.BLL.Repositories.Classes
+namespace GymMangment.DAL.Repositories.Classes
 {
     public class PlanRepository : IPlanRepository
     {
@@ -31,8 +30,16 @@ namespace GymMangment.BLL.Repositories.Classes
 
         public async Task<IEnumerable<Plan>> GetAllAsync(bool tracking = false, CancellationToken ct = default)
         {
-         IQueryable<Plan> query = tracking ? dbContexts.Plans : dbContexts.Plans.AsNoTracking();
-            return  await query.ToListAsync(ct);
+            //IQueryable<Plan> query = tracking ? dbContexts.Plans : dbContexts.Plans.AsNoTracking();
+            //   return await  query.ToListAsync(ct);
+            if (tracking)
+            {
+                return await dbContexts.Plans.ToListAsync(ct);
+            }
+            else
+            {
+                return await dbContexts.Plans.AsNoTracking().ToListAsync(ct);
+            }
 
         }
 

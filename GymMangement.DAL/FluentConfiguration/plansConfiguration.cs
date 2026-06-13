@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 namespace GEAM_CORE.FluentConfiguration;
     using GEAM_CORE.Models;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;ئ
 public class plansConfiguration: IEntityTypeConfiguration<Plan>
     {
         public void Configure(EntityTypeBuilder<Models.Plan> builder)
